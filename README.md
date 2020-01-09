@@ -33,6 +33,12 @@ $ pip install -r requirements.txt
 ```
 
 #### 3. Download the dataset
+
+```bash
+$ chmod +x download.sh
+$ ./download.sh
+```
+
 #### 4. Preprocessing
 
 ```bash
