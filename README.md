@@ -26,28 +26,27 @@ $ git clone https://github.com/yunjey/pytorch-tutorial.git
 $ cd pytorch-tutorial/tutorials/03-advanced/image_captioning/
 ```
 
-#### 2. Download the dataset
+#### 2. Download the required libraries
 
 ```bash
 $ pip install -r requirements.txt
-$ chmod +x download.sh
-$ ./download.sh
 ```
 
-#### 3. Preprocessing
+#### 3. Download the dataset
+#### 4. Preprocessing
 
 ```bash
 $ python build_vocab.py   
 $ python resize.py
 ```
 
-#### 4. Train the model
+#### 5. Train the model
 
 ```bash
 $ python train.py    
 ```
 
-#### 5. Test the model 
+#### 6. Test the model 
 
 ```bash
 $ python sample.py --image='png/example.png'
