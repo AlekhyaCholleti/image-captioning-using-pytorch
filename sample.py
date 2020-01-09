@@ -9,7 +9,7 @@ from build_vocab import Vocabulary
 from model import EncoderCNN, DecoderRNN
 from PIL import Image
 
-
+# Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_image(image_path, transform=None):
@@ -23,6 +23,7 @@ def load_image(image_path, transform=None):
 	return image
 	
 def main(args):
+	# Image preprocessing
 	transform = transforms.Compose([
 		transforms.ToTensor(), 
 		transforms.Normalize((0.485, 0.456, 0.406), 
@@ -33,7 +34,7 @@ def main(args):
 		vocab = pickle.load(f)   
 
 	#build models
-	encoder = EncoderCNN(args.embed_size).eval()
+	encoder = EncoderCNN(args.embed_size).eval()  # eval mode (batchnorm uses moving mean/variance)
 	decoder = DecoderRNN(args.embed_size, args.hidden_size, len(vocab), args.num_layers)	
 	encoder = encoder.to(device)
 	decoder = decoder.to(device)
