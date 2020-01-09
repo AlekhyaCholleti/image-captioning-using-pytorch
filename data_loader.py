@@ -31,9 +31,9 @@ class CocoDataset(data.Dataset):
 		ann_id = self.ids[index]
 		caption = coco.anns[ann_id]['caption']
 		img_id = coco.anns[ann_id]['image_id']
-		path = coco.loadImgs(img_id)[0]['file_name']  #refer coco.loadImgs() return type but filename?????
+		path = coco.loadImgs(img_id)[0]['file_name']  #refer coco.loadImgs() 
 
-		image = Image.open(os.path.join(self.root, path)).convert('RGB')  # what mode does the returned image by image.open() has???
+		image = Image.open(os.path.join(self.root, path)).convert('RGB')  
 		if self.transform is not None:
 			image = self.transform(image)
 
